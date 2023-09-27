@@ -45,3 +45,19 @@ while (i < 16){
     } 
 
 }
+
+function fifthTask() {
+    const arrayOfNumbers = [];
+    
+    // Пишем решение вот тут
+    let j = 0;
+    for (var i = 5; i <= 10; i++) {
+        arrayOfNumbers[j] = i;
+        j++;
+    }
+    
+    // Не трогаем
+    return arrayOfNumbers;
+}
+console.log(fifthTask());
+
