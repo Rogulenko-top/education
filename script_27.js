@@ -24,3 +24,28 @@ test();
 
 function doNothing() {};
 console.log(doNothing() === undefined);
+
+function getMathResult(num1, num2) {
+    if (typeof(num2) ==='string' || num2 <= 0){
+        console.log(num1);
+    } else {
+	
+	let result = '';
+	const nm = num1;
+    for (let i = 0; i < num2; i++) {
+		result = `${result}${num1}`;
+		num1 += nm;
+	   if (i + 1 === num2) {
+		result += ''; 
+	   } else {
+		result += '---'; 
+	   }
+	   
+    }
+	console.log(result);
+	return result;
+	}
+}
+
+getMathResult(3, 6);
+
