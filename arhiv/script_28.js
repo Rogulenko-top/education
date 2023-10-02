@@ -23,3 +23,9 @@ console.log(Math.round(num));
 const tst = '12.8px';
 console.log(parseInt(tst));
 console.log(parseFloat(tst));
+
+console.log(Math.sign(5) !== -1);
+
+console.log(String(10).includes('.') === false);
+
+console.log(Math.ceil(5 / 4));

@@ -91,14 +91,47 @@ writeYourGenres();
 function getTimeFromMinutes(timeMin) {
     if(timeMin < 0 || !Number.isInteger(timeMin) || isNaN(timeMin)) {
         return  "Ошибка, проверьте данные";
-    } else if (timeMin < 600) {
-       let houres = Math.abs(timeMin / 60);
-       let minutes = Math.ceil((timeMin % 1) * 60);
-       timeMin %= 10;
-       if (timeMin === 1) {
+    } else if (timeMin <= 600) {
+
+		const MIN = 60; //минут
+		const clock = timeMin / MIN;
+       const houres = Math.trunc(clock);
+       const minutes = Math.ceil((clock % 1) * MIN);
+
+       if (houres === 1) {
            console.log(`Это ${houres} час и ${minutes} минут`);
-       }
-    }
+		}
+
+		if (houres >= 5 && houres <=20 || houres === 0) {
+			console.log(`Это ${houres} часов и ${minutes} минут`);
+		 }
+		 
+		 if (houres >= 2 && houres <= 4) {
+			 console.log(`Это ${houres} часа и ${minutes} минут`);
+		  }
+	   
+	}
+}
+getTimeFromMinutes(1);
+
+function findMaxNumber(a, b, c, d) {
+	if (
+	typeof(a) !=='number' ||
+	typeof(b) !=='number' ||
+	typeof(c) !=='number' ||
+	typeof(d) !=='number'){
+		return 0;
+	} else {
+		return Math.max(a, b, c, d);
+	}
+
 }
 
-getTimeFromMinutes(150);
+findMaxNumber(33, 45, 90, 304);
+
+
+function fib(num) {
+	return num <= 1 ? num : fib(num - 1) + fib(num - 2); 
+}
+
+fib( fib(7) );
