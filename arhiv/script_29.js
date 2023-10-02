@@ -131,7 +131,15 @@ findMaxNumber(33, 45, 90, 304);
 
 
 function fib(num) {
-	return num <= 1 ? num : fib(num - 1) + fib(num - 2); 
+	let result = '';
+	let a = 1;
+	let b = 1;
+	for (let i = 3; i <= num; i++) {
+		let c = a + b;
+		a = b;
+		b = c;
+		result += b;
+	}
+	return result;
 }
-
-fib( fib(7) );
+console.log(fib(10));
