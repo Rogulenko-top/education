@@ -69,7 +69,6 @@ function writeYourGenres() {
 	for (let i = 1; i <= 3; i++) {
 		personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
 	}
-
 }
 
 writeYourGenres();
@@ -89,3 +88,17 @@ writeYourGenres();
 	
 // }
 
+function getTimeFromMinutes(timeMin) {
+    if(timeMin < 0 || !Number.isInteger(timeMin) || isNaN(timeMin)) {
+        return  "Ошибка, проверьте данные";
+    } else if (timeMin < 600) {
+       let houres = Math.abs(timeMin / 60);
+       let minutes = Math.ceil((timeMin % 1) * 60);
+       timeMin %= 10;
+       if (timeMin === 1) {
+           console.log(`Это ${houres} час и ${minutes} минут`);
+       }
+    }
+}
+
+getTimeFromMinutes(150);
