@@ -35,8 +35,8 @@ function isOpen(prop) {
 console.log(isOpen(restorantData.openNow))
 
 function isAverageLunchPriceTrue(fDish, sDish, average) {debugger
-	console.log(fDish.price.slice(0, -1));
-    if (+fDish.price.slice(0, -1) + (sDish.price) < average) { debugger
+	console.log(sDish.price);
+    if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < average) { debugger
         return 'Цена ниже средней';
     } else { debugger
         return 'Цена выше средней';
